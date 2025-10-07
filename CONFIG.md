@@ -466,12 +466,12 @@ In the `input` section above, we showed that you can monitor multiple logfiles. 
   name: alice_occurrences_total
   help: number of log lines containing alice
   match: 'alice'
-  paths: /tmp/example/*.log
+  path: /tmp/example/*.log
   labels:
       logfile: '{{base .logfile}}'
 ```
 
-In the example, the `alice_occurrences_total` would only be applied to files matching `/tmp/example/*.log` and not to other files. If you have only one single path, you can use `path` as an alternative to `paths`. Note that `path` and `paths` are [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) patterns, which is not the same as Grok patterns or regular expressions.
+In the example, the `alice_occurrences_total` would only be applied to files matching `/tmp/example/*.log` and not to other files. If you have multiple paths, you can use `paths` as an alternative to `path`. Note that `path` and `paths` are [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) patterns, which is not the same as Grok patterns or regular expressions.
 
 ### Expiring Old Labels
 
